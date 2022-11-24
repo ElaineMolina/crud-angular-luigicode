@@ -1,1 +1,23 @@
-<p>lista-produto works!</p>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Ver</th>
+        <th scope="col">Editar Produto</th>
+        <th scope="col">Deletar Produto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of produtos">
+        <td>{{produto.id}}</td>
+        <td>{{produto.name}}</td>
+        <td>R$ {{produto.preco}}</td>
+        <td><button class="btn btn-outline-primary" routerLink="/detail/{{produto.id}}"><i class="far fa-eye"></i> Ver</button></td>
+        <td><button class="btn btn-outline-warning" routerLink="/edit/{{produto.id}}"><i class="far fa-edit"></i> Editar</button></td>
+        <td><button class="btn btn-outline-danger" (click)="delete(produto.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <router-outlet></router-outlet> -->
