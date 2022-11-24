@@ -1,10 +1,10 @@
 package com.tutorial.crud.dto;
 
-public class Mensagem {
+public class Message {
 
     private String mensagem;
 
-    public Mensagem(String mensagem) {
+    public Message(String mensagem) {
         this.mensagem = mensagem;
     }
 

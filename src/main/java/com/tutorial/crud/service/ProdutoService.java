@@ -14,7 +14,6 @@ import java.util.Optional;
 public class ProdutoService {
 
     @Autowired
-    static
     ProdutoRepository produtoRepository;
 
     public List<Produto> list(){
@@ -25,11 +24,11 @@ public class ProdutoService {
         return produtoRepository.findById(id);
     }
 
-    public Optional<Produto> getByNome(String nome){
-        return produtoRepository.findByNome(nome);
+    public Optional<Produto> getByName(String name){
+        return produtoRepository.findByName(name);
     }
 
-    public static void save(Produto produto){
+    public void save(Produto produto){
         produtoRepository.save(produto);
     }
 
@@ -41,7 +40,7 @@ public class ProdutoService {
         return produtoRepository.existsById(id);
     }
 
-    public static boolean existsByNome(String nome){
-        return produtoRepository.existsByNome(nome);
+    public boolean existsByName(String name){
+        return produtoRepository.existsByName(name);
     }
 }

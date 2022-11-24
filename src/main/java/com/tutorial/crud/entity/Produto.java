@@ -11,14 +11,14 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nome;
+    private String name;
     private float preco;
 
     public Produto() {
     }
 
-    public Produto(String nome, float preco) {
-        this.nome = nome;
+    public Produto(String name, float preco) {
+        this.name = name;
         this.preco = preco;
     }
 
@@ -30,12 +30,12 @@ public class Produto {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String nome) {
+        this.name = name;
     }
 
     public float getPreco() {

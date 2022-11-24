@@ -6,31 +6,31 @@ import javax.validation.constraints.NotBlank;
 public class ProdutoDto {
 
     @NotBlank
-    private String nome;
+    private String name;
     @Min(0)
-    private float preco;
+    private Float preco;
 
     public ProdutoDto() {
     }
 
-    public ProdutoDto(String nome, float preco) {
-        this.nome = nome;
+    public ProdutoDto(String name, Float preco) {
+        this.name = name;
         this.preco = preco;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public float getPreco() {
+    public Float getPreco() {
         return preco;
     }
 
-    public void setPreco(float preco) {
+    public void setPreco(Float preco) {
         this.preco = preco;
     }
 }
