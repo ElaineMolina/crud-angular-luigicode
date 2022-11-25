@@ -30,9 +30,20 @@ export class ListaProdutoComponent implements OnInit {
       }
     );
   }
-
   
-  delete(id: any) {
-    alert('deletar o ' + id);
+  delete(id: number) {
+    this.produtoService.delete(id).subscribe(
+      data => {
+        this.toastr.success('Produto deletado', 'OK', {
+          timeOut: 3000, positionClass: 'toast-top-center'
+        });
+        this.chargeProdutos();
+      },
+      err => {
+        this.toastr.error(err.error.mensaje, 'Fail', {
+          timeOut: 3000,  positionClass: 'toast-top-center',
+        });
+      }
+    );
   }
 }

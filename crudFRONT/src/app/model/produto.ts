@@ -7,5 +7,7 @@ export class Produto {
         this.name = name;
         this.preco = preco;
     }
+
+
 }
 

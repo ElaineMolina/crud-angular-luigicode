@@ -1,4 +1,4 @@
-  <table class="table table-dark table-striped">
+  <table class="table table-dark">
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -16,8 +16,7 @@
         <td>R$ {{produto.preco}}</td>
         <td><button class="btn btn-outline-primary" routerLink="/detail/{{produto.id}}"><i class="far fa-eye"></i> Ver</button></td>
         <td><button class="btn btn-outline-warning" routerLink="/edit/{{produto.id}}"><i class="far fa-edit"></i> Editar</button></td>
-        <td><button class="btn btn-outline-danger" (click)="delete(produto.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+        <td><button class="btn btn-outline-danger" (click)="delete(produto.id!)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
       </tr>
     </tbody>
   </table>
-  <!-- <router-outlet></router-outlet> -->

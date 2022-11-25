@@ -1,1 +1,20 @@
-<p>edit-produto works!</p>
+<div class="container" *ngIf="produto">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                    [(ngModel)]="produto.name" required>
+                </div>
+                <div class="form-group">
+                    <label for="preco">Preco</label>      
+                    <input type="number" class="form-control" id="preco" name="preco"
+                    [(ngModel)]="produto.preco" required>
+                </div>
+                <br>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

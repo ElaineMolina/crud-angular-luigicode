@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
+import { Produto } from '../model/produto';
+import { ProdutoService } from './../service/produto.service';
 
 @Component({
   selector: 'app-new-produto',
@@ -7,9 +12,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewProdutoComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  name = ' ';
+  preco: number | any = null;
+
+  constructor(
+    private produtoService: ProdutoService,
+    private toastr: ToastrService,
+    private router: Router
+    ) { }
+
+  ngOnInit() {
+  }
+
+  onCreate(): void {
+    const produto = new Produto(this.name, this.preco);
+    this.produtoService.save(produto).subscribe(
+      data => {
+        this.toastr.success('Producto Creado', 'OK', {
+          timeOut: 3000, positionClass: 'toast-top-center'
+        });
+        this.router.navigate(['/']);
+      },
+      err => {
+        this.toastr.error(err.error.mensaje, 'Fail', {
+          timeOut: 3000,  positionClass: 'toast-top-center',
+        });
+        this.router.navigate(['/']);
+      }
+    );
   }
 
 }
