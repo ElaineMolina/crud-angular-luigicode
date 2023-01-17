@@ -29,7 +29,7 @@ export class NewProdutoComponent implements OnInit {
     const produto = new Produto(this.name, this.preco);
     this.produtoService.save(produto).subscribe(
       data => {
-        this.toastr.success('Producto Creado', 'OK', {
+        this.toastr.success('Produto Criado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.router.navigate(['/']);
